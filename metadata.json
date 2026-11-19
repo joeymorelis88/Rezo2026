@@ -1,0 +1,6 @@
+{
+  "name": "Rezostar Corporation",
+  "description": "Bringing trusted wellness and healthcare brands to households across the Philippines since 2006.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
