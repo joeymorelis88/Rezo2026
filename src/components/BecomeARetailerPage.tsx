@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { HEALTHCARE_BRANDS, WELLNESS_BRANDS } from '../data/brands';
 
 interface BecomeARetailerPageProps {
   onBrowseBrands: () => void;
+  initialBrand?: string;
 }
 
 const RETAILER_STEPS = [
@@ -23,19 +24,26 @@ const RETAILER_STEPS = [
   },
 ];
 
-export const BecomeARetailerPage: React.FC<BecomeARetailerPageProps> = ({ onBrowseBrands }) => {
+export const BecomeARetailerPage: React.FC<BecomeARetailerPageProps> = ({
+  onBrowseBrands,
+  initialBrand = '',
+}) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [businessType, setBusinessType] = useState('');
   const [phone, setPhone] = useState('');
-  const [brandsOfInterest, setBrandsOfInterest] = useState('');
+  const [brandsOfInterest, setBrandsOfInterest] = useState(initialBrand);
   const [message, setMessage] = useState('');
   const [statusMessage, setStatusMessage] = useState<{
     type: 'success' | 'error';
     text: string;
   } | null>(null);
+
+  useEffect(() => {
+    setBrandsOfInterest(initialBrand);
+  }, [initialBrand]);
 
   const firstNameInputRef = useRef<HTMLInputElement>(null);
 

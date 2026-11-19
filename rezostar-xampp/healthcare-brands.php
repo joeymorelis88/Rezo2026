@@ -178,14 +178,12 @@ require __DIR__ . '/includes/header.php';
         <h2 class="hb-navy-cta-title">
           Don&rsquo;t see what you&rsquo;re looking for? Ask us about our full portfolio.
         </h2>
-        <button
-          type="button"
-          class="btn-gold js-open-inquiry"
-          data-source="Healthcare Portfolio CTA"
-          data-category="Healthcare Brands"
+        <a
+          href="contact.php?brand=Healthcare+Brands+Portfolio"
+          class="btn-gold"
         >
           CONTACT SALES
-        </button>
+        </a>
       </div>
     </section>
   </main>

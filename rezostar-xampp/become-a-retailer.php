@@ -9,6 +9,7 @@ $wellnessBrands = $catalog['wellnessBrands'];
 
 $retailerData = get_retailer_page_data();
 $retailerSteps = $retailerData['steps'];
+$preselectedBrand = trim((string) ($_GET['brand'] ?? ''));
 
 $activePage = 'retailer';
 $pageTitle = 'Become a Retailer';
@@ -172,12 +173,22 @@ require __DIR__ . '/includes/header.php';
                 <option value="Healthcare Brands Portfolio">Healthcare Brands Portfolio</option>
                 <optgroup label="Wellness Brands">
                   <?php foreach ($wellnessBrands as $brand): ?>
-                    <option value="<?= e($brand['name']) ?>"><?= e($brand['name']) ?></option>
+                    <option
+                      value="<?= e($brand['name']) ?>"
+                      <?= $preselectedBrand !== '' && strcasecmp($preselectedBrand, (string) $brand['name']) === 0 ? 'selected' : '' ?>
+                    >
+                      <?= e($brand['name']) ?>
+                    </option>
                   <?php endforeach; ?>
                 </optgroup>
                 <optgroup label="Healthcare Brands">
                   <?php foreach ($healthcareBrands as $brand): ?>
-                    <option value="<?= e($brand['name']) ?>"><?= e($brand['name']) ?></option>
+                    <option
+                      value="<?= e($brand['name']) ?>"
+                      <?= $preselectedBrand !== '' && strcasecmp($preselectedBrand, (string) $brand['name']) === 0 ? 'selected' : '' ?>
+                    >
+                      <?= e($brand['name']) ?>
+                    </option>
                   <?php endforeach; ?>
                 </optgroup>
               </select>

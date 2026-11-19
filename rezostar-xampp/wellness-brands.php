@@ -177,14 +177,12 @@ require __DIR__ . '/includes/header.php';
         <h2 class="wb-terracotta-cta-title">
           Don&rsquo;t see what you&rsquo;re looking for? Ask us about our full portfolio.
         </h2>
-        <button
-          type="button"
-          class="btn-gold js-open-inquiry"
-          data-source="Wellness Portfolio CTA"
-          data-category="Wellness Brands"
+        <a
+          href="contact.php?brand=Wellness+Brands+Portfolio"
+          class="btn-gold"
         >
           CONTACT SALES
-        </button>
+        </a>
       </div>
     </section>
   </main>

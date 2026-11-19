@@ -12,6 +12,7 @@ interface BrandPageProps {
   onNavigateCategory: (category: 'wellness' | 'healthcare') => void;
   onSelectBrand: (slug: string) => void;
   onNavigateContact: (brandName?: string) => void;
+  onNavigateRetailer: (brandName?: string) => void;
   onOpenInquiry: (
     brand?: string,
     category?: 'Both Categories' | 'Wellness Brands' | 'Healthcare Brands'
@@ -122,6 +123,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({
   onNavigateCategory,
   onSelectBrand,
   onNavigateContact,
+  onNavigateRetailer,
   onOpenInquiry,
   onOpenNovaChannels,
 }) => {
@@ -469,12 +471,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({
           </h2>
           <button
             type="button"
-            onClick={() =>
-              onOpenInquiry(
-                activeBrand.name,
-                isHealthcare ? 'Healthcare Brands' : 'Wellness Brands'
-              )
-            }
+            onClick={() => onNavigateRetailer(activeBrand.name)}
             className="mt-6 rounded bg-[#F7A600] px-7 py-3.5 font-display text-[11px] font-bold tracking-[0.06em] text-white uppercase transition-all hover:-translate-y-0.5 hover:bg-[#df9500]"
           >
             ENQUIRE NOW

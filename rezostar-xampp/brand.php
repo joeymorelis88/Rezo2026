@@ -156,15 +156,12 @@ require __DIR__ . '/includes/header.php';
         <h2 class="retailer-cta-title">
           Interested in carrying <?= e($brandName) ?> in your store?
         </h2>
-        <button
-          type="button"
-          class="btn-gold js-open-inquiry"
-          data-source="Brand Page Bottom CTA: <?= e($brandName) ?>"
-          data-brand="<?= e($brandName) ?>"
-          data-category="<?= e($categoryLabel) ?>"
+        <a
+          href="become-a-retailer.php?brand=<?= urlencode((string) $brandName) ?>"
+          class="btn-gold"
         >
           ENQUIRE NOW
-        </button>
+        </a>
       </div>
     </section>
 

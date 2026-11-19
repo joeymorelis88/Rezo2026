@@ -112,6 +112,7 @@ export default function App() {
   const [activeView, setActiveView] = useState<'home' | 'about' | 'contact' | 'retailer' | 'wellness' | 'healthcare' | 'brand' | 'catalog'>('home');
   const [selectedBrandSlug, setSelectedBrandSlug] = useState<string>('pearlie-white');
   const [contactInitialBrand, setContactInitialBrand] = useState<string>('');
+  const [retailerInitialBrand, setRetailerInitialBrand] = useState<string>('');
   const [catalogCategory, setCatalogCategory] = useState<'all' | BrandCategory>('all');
   const [highlightedSlug, setHighlightedSlug] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -224,7 +225,8 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const openBecomeARetailer = () => {
+  const openBecomeARetailer = (brandName = '') => {
+    setRetailerInitialBrand(brandName);
     setActiveView('retailer');
     setMegaMenuOpen(false);
     setMobileMenuOpen(false);
@@ -585,12 +587,16 @@ export default function App() {
       ) : activeView === 'contact' ? (
         <ContactPage initialBrand={contactInitialBrand} />
       ) : activeView === 'retailer' ? (
-        <BecomeARetailerPage onBrowseBrands={() => openCatalog('all')} />
+        <BecomeARetailerPage
+          initialBrand={retailerInitialBrand}
+          onBrowseBrands={() => openCatalog('all')}
+        />
       ) : activeView === 'wellness' ? (
         <WellnessBrandsPage
           highlightedSlug={highlightedSlug}
           onSwitchToHealthcare={() => openHealthcareBrands()}
           onSelectBrand={(slug) => openBrandPage(slug)}
+          onContactSales={() => openContact('Wellness Brands Portfolio')}
           onOpenInquiry={(brand, category) => openInquiry(brand, category)}
         />
       ) : activeView === 'healthcare' ? (
@@ -598,6 +604,7 @@ export default function App() {
           highlightedSlug={highlightedSlug}
           onSwitchToWellness={() => openWellnessBrands()}
           onSelectBrand={(slug) => openBrandPage(slug)}
+          onContactSales={() => openContact('Healthcare Brands Portfolio')}
           onOpenInquiry={(brand, category) => openInquiry(brand, category)}
         />
       ) : activeView === 'brand' ? (
@@ -612,6 +619,7 @@ export default function App() {
           }
           onSelectBrand={(slug) => openBrandPage(slug)}
           onNavigateContact={(brandName) => openContact(brandName)}
+          onNavigateRetailer={(brandName) => openBecomeARetailer(brandName)}
           onOpenInquiry={(brand, category) => openInquiry(brand, category)}
           onOpenNovaChannels={() => setNovaChannelsOpen(true)}
         />
@@ -1207,7 +1215,7 @@ export default function App() {
               <li>
                 <button
                   type="button"
-                  onClick={() => openInquiry()}
+                  onClick={() => openContact()}
                   className="hover:text-[#D94B18] hover:underline"
                 >
                   Contact Sales

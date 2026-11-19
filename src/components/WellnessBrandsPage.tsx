@@ -10,6 +10,7 @@ interface WellnessBrandsPageProps {
   highlightedSlug?: string;
   onSwitchToHealthcare: () => void;
   onSelectBrand?: (slug: string) => void;
+  onContactSales?: () => void;
   onOpenInquiry: (
     brand?: string,
     category?: 'Both Categories' | 'Wellness Brands' | 'Healthcare Brands'
@@ -96,6 +97,7 @@ export const WellnessBrandsPage: React.FC<WellnessBrandsPageProps> = ({
   highlightedSlug = '',
   onSwitchToHealthcare,
   onSelectBrand,
+  onContactSales,
   onOpenInquiry,
 }) => {
   const featuredCards = useMemo<FeaturedShowcaseCard[]>(() => {
@@ -380,7 +382,7 @@ export const WellnessBrandsPage: React.FC<WellnessBrandsPageProps> = ({
           </h2>
           <button
             type="button"
-            onClick={() => onOpenInquiry('', 'Wellness Brands')}
+            onClick={() => (onContactSales ? onContactSales() : onOpenInquiry('', 'Wellness Brands'))}
             className="mt-6 rounded bg-[#F7A600] px-7 py-3.5 font-display text-[12px] font-bold tracking-[0.06em] text-white uppercase transition-all hover:-translate-y-0.5 hover:bg-[#df9500]"
           >
             CONTACT SALES

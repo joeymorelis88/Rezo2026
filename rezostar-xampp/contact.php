@@ -144,9 +144,24 @@ require __DIR__ . '/includes/header.php';
                   <label for="cpBrandsOfInterest" class="contact-label">Brands of Interest</label>
                   <select id="cpBrandsOfInterest" name="brands_of_interest" class="contact-control contact-select">
                     <option value="">Select a brand or portfolio...</option>
-                    <option value="All Wellness &amp; Healthcare Brands">All Wellness &amp; Healthcare Brands</option>
-                    <option value="Wellness Brands Portfolio">Wellness Brands Portfolio</option>
-                    <option value="Healthcare Brands Portfolio">Healthcare Brands Portfolio</option>
+                    <option
+                      value="All Wellness &amp; Healthcare Brands"
+                      <?= $preselectedBrand !== '' && strcasecmp($preselectedBrand, 'All Wellness & Healthcare Brands') === 0 ? 'selected' : '' ?>
+                    >
+                      All Wellness &amp; Healthcare Brands
+                    </option>
+                    <option
+                      value="Wellness Brands Portfolio"
+                      <?= $preselectedBrand !== '' && strcasecmp($preselectedBrand, 'Wellness Brands Portfolio') === 0 ? 'selected' : '' ?>
+                    >
+                      Wellness Brands Portfolio
+                    </option>
+                    <option
+                      value="Healthcare Brands Portfolio"
+                      <?= $preselectedBrand !== '' && strcasecmp($preselectedBrand, 'Healthcare Brands Portfolio') === 0 ? 'selected' : '' ?>
+                    >
+                      Healthcare Brands Portfolio
+                    </option>
                     <optgroup label="Wellness Brands">
                       <?php foreach ($wellnessBrands as $brand): ?>
                         <option

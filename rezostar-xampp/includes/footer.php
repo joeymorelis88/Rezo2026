@@ -26,7 +26,7 @@
         <h3 class="footer-heading">PARTNERSHIP</h3>
         <ul class="footer-links">
           <li><a href="become-a-retailer.php">Become a Retailer</a></li>
-          <li><button type="button" class="footer-link-btn js-open-inquiry" data-source="Contact Sales">Contact Sales</button></li>
+          <li><a href="contact.php">Contact Sales</a></li>
         </ul>
       </div>
 
