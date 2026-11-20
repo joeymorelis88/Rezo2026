@@ -33,9 +33,9 @@ if ($selectedCategory === 'all' || $selectedCategory === 'healthcare') {
 if ($searchQuery !== '') {
     $qLower = mb_strtolower($searchQuery);
     $combinedBrands = array_values(array_filter($combinedBrands, function ($b) use ($qLower) {
-        return str_contains(mb_strtolower($b['name']), $qLower)
-            || str_contains(mb_strtolower($b['tagline'] ?? ''), $qLower)
-            || str_contains(mb_strtolower($b['description'] ?? ''), $qLower);
+        return strpos(mb_strtolower((string) ($b['name'] ?? '')), $qLower) !== false
+            || strpos(mb_strtolower((string) ($b['tagline'] ?? '')), $qLower) !== false
+            || strpos(mb_strtolower((string) ($b['description'] ?? '')), $qLower) !== false;
     }));
 }
 

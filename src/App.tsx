@@ -589,7 +589,7 @@ export default function App() {
       ) : activeView === 'retailer' ? (
         <BecomeARetailerPage
           initialBrand={retailerInitialBrand}
-          onBrowseBrands={() => openCatalog('all')}
+          onBrowseBrands={() => openWellnessBrands()}
         />
       ) : activeView === 'wellness' ? (
         <WellnessBrandsPage

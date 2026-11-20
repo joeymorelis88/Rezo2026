@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 /**
  * Rezostar Corporation — MySQL PDO Database Configuration (XAMPP Ready)
+ * Target PHP Version: 7.4.20 (Strict PHP 7.4 compatibility)
  *
  * Default XAMPP credentials:
  *   Host: 127.0.0.1
@@ -11,6 +12,7 @@ declare(strict_types=1);
  *   DB:   rezostar_db
  */
 
+define('REZOSTAR_PHP_VERSION', '7.4.20');
 define('DB_HOST', getenv('REZOSTAR_DB_HOST') ?: '127.0.0.1');
 define('DB_PORT', getenv('REZOSTAR_DB_PORT') ?: '3306');
 define('DB_NAME', getenv('REZOSTAR_DB_NAME') ?: 'rezostar_db');

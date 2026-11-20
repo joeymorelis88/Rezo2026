@@ -1,6 +1,11 @@
 # Rezostar Corporation — XAMPP & MySQL Deployment Guide
 
-This folder contains the standalone PHP, HTML5, CSS3, Bootstrap 5.3, JavaScript, and MySQL application ready for XAMPP.
+This folder contains the standalone PHP (**PHP Version 7.4.20**), HTML5, CSS3, Bootstrap 5.3, JavaScript, and MySQL application ready for XAMPP.
+
+## Runtime Requirements
+- **PHP Version**: `7.4.20` (configured in `composer.json`, `.php-version`, and `config/db.php` with PHP 7.4-compatible syntax and PDO MySQL)
+- **Extensions**: `pdo`, `pdo_mysql`, `mbstring`, `json`
+- **Database**: MySQL 5.7+ / MariaDB 10.4+ (included in XAMPP 7.4.20)
 
 ## Pages & Features
 - `index.php` — Homepage with hero, Why Rezostar highlights, Our Brands split showcase, interactive brand carousel, Nova Wellness spotlight, and retailer inquiry CTA.

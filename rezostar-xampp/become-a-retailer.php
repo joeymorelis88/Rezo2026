@@ -34,7 +34,7 @@ require __DIR__ . '/includes/header.php';
               <a href="#partnership-inquiry-form" class="btn-gold" id="enquireNowJumpBtn">
                 ENQUIRE NOW
               </a>
-              <a href="brands.php" class="btn-outline-navy retailer-hero-outline-btn">
+              <a href="wellness-brands.php" class="btn-outline-navy retailer-hero-outline-btn">
                 BROWSE OUR BRANDS
               </a>
             </div>
